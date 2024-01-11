@@ -1,5 +1,6 @@
 'use client';
 
+import { Metadata } from 'next';
 import { useEffect } from 'react';
 
 type ErrorProps = {
@@ -7,7 +8,11 @@ type ErrorProps = {
   reset: () => void;
 };
 
-export default async function Error(props: ErrorProps) {
+export const metadata: Metadata = {
+  title: 'Someting went wrong...',
+};
+
+export default function Error(props: ErrorProps) {
   const { error, reset } = props;
 
   useEffect(() => {
